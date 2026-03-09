@@ -103,3 +103,160 @@ strong { color: var(--clr-text); font-weight: 600; }
 }
 
 .nav__links a:hover { color: var(--clr-accent); }
+/* ── 5. HERO ─────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: calc(var(--nav-h) + var(--sp-lg)) var(--sp-md) var(--sp-xl);
+  max-width: var(--max-w);
+  margin: 0 auto;
+  position: relative;
+}
+.hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-xs);
+  margin-bottom: var(--sp-md);
+}
+
+.hero__tag::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22C55E;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.hero__tag .mono {
+  font-size: 0.8rem;
+  color: var(--clr-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+.hero__name {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 9vw, 7.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--clr-text);
+  margin-bottom: var(--sp-sm);
+}
+
+.hero__role {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 300;
+  color: var(--clr-muted);
+  margin-bottom: var(--sp-sm);
+  letter-spacing: 0.01em;
+}
+.hero__sub {
+  font-size: 1rem;
+  color: var(--clr-muted);
+  max-width: 480px;
+  line-height: 1.8;
+  margin-bottom: var(--sp-lg);
+}
+
+.hero__cta {
+  display: flex;
+  gap: var(--sp-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-xl);
+}
+
+.hero__scroll-hint {
+  position: absolute;
+  bottom: var(--sp-md);
+  left: var(--sp-md);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--clr-border);
+  letter-spacing: 0.1em;
+  animation: fadeInUp 1.5s 0.8s both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* ── 6. BUTTONS ──────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  letter-spacing: 0.01em;
+}
+
+.btn--primary {
+  background: var(--clr-accent);
+  color: #05111d;
+  border: 2px solid var(--clr-accent);
+  box-shadow: 0 10px 24px rgba(56, 189, 248, 0.24);
+}
+
+.btn--primary:hover {
+  background: #6dd3ff;
+  border-color: #6dd3ff;
+  transform: translateY(-1px);
+}
+
+.btn--outline {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--clr-text);
+  border: 2px solid var(--clr-border);
+}
+
+.btn--outline:hover {
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+}
+/* ── 7. LAYOUT HELPERS ───────────────────────── */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--sp-md);
+}
+
+.section {
+  padding: var(--sp-xl) 0;
+}
+
+.section--alt {
+  background: var(--clr-bg-alt);
+}
+
+.section__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: var(--sp-sm);
+}
+
+.section__heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--clr-text);
+  margin-bottom: var(--sp-lg);
+}
+
+.accent { color: var(--clr-accent); }
+
+.mono { font-family: var(--font-mono); }
