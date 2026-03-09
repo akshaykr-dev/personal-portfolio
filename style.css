@@ -65,3 +65,41 @@ p {
 p:last-child { margin-bottom: 0; }
 
 strong { color: var(--clr-text); font-weight: 600; }
+/* ── 4. NAV ──────────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--sp-md);
+  background: rgba(8, 17, 31, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--clr-border);
+  z-index: 100;
+}
+.nav__logo {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  color: var(--clr-text);
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--sp-md);
+  align-items: center;
+}
+
+.nav__links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--clr-muted);
+  letter-spacing: 0.01em;
+  transition: color var(--transition);
+}
+
+.nav__links a:hover { color: var(--clr-accent); }
