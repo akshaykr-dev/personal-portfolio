@@ -345,3 +345,107 @@ strong { color: var(--clr-text); font-weight: 600; }
   padding: 0.25rem 0.65rem;
   font-size: 0.75rem;
 }
+/* ── 11. PROJECTS ─────────────────────────────── */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-md);
+}
+
+.project-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+.project-card--ml {
+  border-color: var(--clr-accent);
+  background: linear-gradient(135deg, rgba(17, 31, 54, 0.98) 72%, rgba(56, 189, 248, 0.18));
+}
+
+.project-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-sm);
+  flex-wrap: wrap;
+}
+
+.project-card__type {
+  font-size: 0.72rem;
+  color: var(--clr-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-card__status {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  font-weight: 500;
+}
+
+.project-card__status--done {
+  background: #0f2d24;
+  color: #74e2b8;
+}
+
+.project-card__status--wip {
+  background: #33250d;
+  color: #f9c66e;
+}
+
+.project-card__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--clr-text);
+  line-height: 1.2;
+}
+
+.project-card__desc {
+  font-size: 0.9rem;
+  color: var(--clr-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.project-card__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.project-card__highlights li {
+  font-size: 0.85rem;
+  color: var(--clr-muted);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.project-card__highlights li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--clr-accent);
+  font-size: 0.75rem;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
