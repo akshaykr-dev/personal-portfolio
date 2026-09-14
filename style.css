@@ -645,3 +645,73 @@ strong { color: var(--clr-text); font-weight: 600; }
   font-size: 0.78rem;
   color: var(--clr-muted);
 }
+/* ── 16. RESPONSIVE ──────────────────────────── */
+
+/* Tablet — 900px and below */
+@media (max-width: 900px) {
+
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-lg);
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certs__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-sm);
+  }
+}
+
+/* Mobile — 600px and below */
+@media (max-width: 600px) {
+
+  :root {
+    --sp-md: 1.25rem;
+    --sp-lg: 2.5rem;
+    --sp-xl: 4rem;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  .hero__name {
+    font-size: clamp(2.8rem, 12vw, 4rem);
+  }
+
+  .hero__cta {
+    flex-direction: column;
+  }
+
+  .about__facts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certs__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section__heading {
+    font-size: 2rem;
+  }
+
+  .contact__inner {
+    gap: var(--sp-sm);
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
