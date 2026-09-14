@@ -677,11 +677,6 @@ strong { color: var(--clr-text); font-weight: 600; }
     --sp-lg: 2.5rem;
     --sp-xl: 4rem;
   }
-
-  .nav__links {
-    display: none;
-  }
-
   .hero__name {
     font-size: clamp(2.8rem, 12vw, 4rem);
   }
@@ -713,5 +708,63 @@ strong { color: var(--clr-text); font-weight: 600; }
   .footer__inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+/* ── 17. HAMBURGER MENU ──────────────────────── */
+.nav__toggle-input {
+  display: none;
+}
+
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 101;
+}
+
+.nav__hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--clr-text);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+@media (max-width: 600px) {
+  .nav__hamburger {
+    display: flex;
+  }
+
+  .nav__links {
+    display: none;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    background: rgba(8, 17, 31, 0.98);
+    flex-direction: column;
+    padding: var(--sp-md);
+    gap: var(--sp-sm);
+    border-bottom: 1px solid var(--clr-border);
+    z-index: 99;
+  }
+
+  .nav__toggle-input:checked ~ .nav__links {
+    display: flex;
+  }
+
+  .nav__toggle-input:checked ~ .nav__hamburger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav__toggle-input:checked ~ .nav__hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav__toggle-input:checked ~ .nav__hamburger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 }
